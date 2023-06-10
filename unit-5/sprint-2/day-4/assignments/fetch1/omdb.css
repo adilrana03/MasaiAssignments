@@ -1,0 +1,99 @@
+body{
+        margin: auto;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+}
+#nav{
+        display: flex;
+        justify-content: space-between;
+        background-color: rgb(44, 43, 43);
+}
+#nav>div{
+        display: flex;
+        margin: auto;
+        justify-content: space-between;
+}
+#nav>div>div{
+        display: flex;
+        margin: 10px;
+}
+#logo>img{
+        width: 55%;
+        border-radius: 5px;
+}
+h1{
+        color: rgb(126, 140, 2);
+        font-size: 40px;
+}
+#kids{
+        color: rgb(194, 194, 9);
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+#banner{
+        background-color: black;
+}
+#banner>img{
+        width:1450px;
+        height: 500px;
+        background-color: black;
+        margin-top: -20px;
+}
+
+#continue{
+        display: flex;
+        margin-top: -2px;
+        background-color: black;
+}
+#continue> div{
+        margin: 5px;
+}
+#continue> div>img{
+width: 100%;
+display: flex;
+}
+div>h3{
+        color: white;
+}
+#show-movie{
+        margin-top: 20px;
+        align-items:flex-end;
+        background-color: white;
+}
+
+.title{
+        width: 20%;
+        align-items: center;
+        margin: auto;
+        text-align: left;
+}
+input{
+        padding: 3px;
+        font-size: 20px;
+        margin: auto;
+        border-radius: 8px ;
+}
+button{
+        padding: 7px;
+        color: rgb(3, 48, 161);
+        background-color: rgb(223, 232, 94);
+        cursor: pointer;
+}
+#show-movie>div>img{
+        border-radius: 10px;
+}
+h2{
+        color: rgb(46, 3, 3);
+}
+#cont{
+        color: white;
+        text-align: left;
+        background-color: black;
+        margin-top: 0px;
+        padding: 7px;
+        margin-bottom: 0px;
+}
+.recom{
+        color: chartreuse;
+        background-color: rgb(71, 69, 69);
+}

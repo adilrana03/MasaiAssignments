@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scroll Container</title>
+    <style>
+        .main{
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+        }
+        .parent{
+            overflow-y: auto;
+            max-height: 400px;
+            border: 2px solid green;
+            padding: 0px 40px;
+        }
+        h1{
+            text-align: center;
+            color: darkblue;
+        }
+        .parent > p{
+            font-size: medium;
+        }
+        .child > p{
+            font-size: x-large;
+            font-weight: 500;
+        }
+        .child{
+            padding: 30px;
+        }
+        button{
+            width: 150px;
+            height: 30px;
+            margin: 15px;
+            border: none;
+            background-color: grey;
+        }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+</body>
+</html>
+<script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+ <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<script src="./scroll.js" type="text/babel"></script>

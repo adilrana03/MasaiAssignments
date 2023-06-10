@@ -1,0 +1,13 @@
+.counter{
+        box-shadow: 0 0 10px black;
+        padding: 30px;
+        width: 80%;
+        text-align: center;
+        margin: auto;
+}
+#btn{
+        background-color:green;
+        color:white;
+        padding:5px;
+        border-radius: 6px;
+}

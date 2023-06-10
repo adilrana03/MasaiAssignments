@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PhonePe Payment</title>
+    <style>
+      body {
+        font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+          "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+      }
+      .logo {
+        width: 100%;
+        height: 100px;
+      }
+      #container {
+        margin: auto;
+        width: 30%;
+        margin-top: 80px;
+        padding: 20px;
+        background: white;
+        border-radius: 15px;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        align-items: center;
+      }
+      form {
+        align-items: center;
+      }
+
+      input {
+        margin: auto;
+        width: 60%;
+        display: block;
+        margin-top: 15px 0px;
+        font-size: 20px;
+        padding: 1%;
+      }
+      #submit {
+        width: 50%;
+        border-radius: 5px;
+        border: none;
+        background-color: rgb(168, 82, 190);
+        color: aliceblue;
+        font-size: 15px;
+        padding: 10px;
+        cursor: pointer;
+      }
+      img {
+        width: 200px;
+        height: 200px;
+      }
+      .success{
+        position: absolute;
+        top: 60%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+      }
+    </style>
+  </head>
+  <body>
+    <img
+      class="logo"
+      src="https://www.voicendata.com/wp-content/uploads/2020/03/Phonepay.jpg"
+      alt=""/>
+    <div id="container">
+      <form id="otpForm">
+        <input type="number" placeholder=" Enter Mobile Number" id="amount" /><br />
+        <input type="number" placeholder="Enter the OTP" id="otp" /> <br />
+      
+        <input type="submit" value="Pay" id="submit" />
+      </form>
+    </div>
+    <h2 class="success"></h2>
+    <h2 class="fail"></h2>
+  </body>
+</html>
+
+<script src="./scripts/phonepe.js"></script>

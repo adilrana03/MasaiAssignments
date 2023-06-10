@@ -1,0 +1,53 @@
+#upper {
+        background-color: rgb(186, 215, 224);
+        text-align: center;
+        margin: -20px;
+        padding: 10px;
+      }
+      input {
+        width: 30%;
+        border: none;
+        height: 40px;
+        font-size: 18px;
+        padding-left: 10px;
+      }
+      button {
+        border: none;
+        width: 10%;
+        height: 42px;
+        background-color: black;
+        color: aliceblue;
+        margin-left: -3px;
+        cursor: pointer;
+      }
+      #parent {
+        display: flex;
+      }
+      #weatherContainer{
+        display: flex;
+        background-color: black;
+        color: white;
+        margin-top: 40px;
+        border-radius: 10px;
+
+      }
+      #weatherContainer>div{
+        margin: auto;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        color: white;
+        font-size: 25px;
+        border: 1px solid white;
+        width: 21%;
+        text-align: center;
+        border-radius: 8px;
+
+      }
+      #cityName{
+        text-align: center;
+        margin-top: 50px;
+      }
+      .imgClass{
+        height: 150px;
+        width: 150px;
+      }

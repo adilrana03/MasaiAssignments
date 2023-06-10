@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+</head>
+<body onload="getTodo()">
+        <input type="text" name="" id="" placeholder="enter">
+        <button onclick="addTodo()"> Search</button>
+        <div id="cont"></div>
+</body>
+</html>
+
+<script>
+
+        let getTodo= ()=>{
+                fetch('http://localhost:3000/post')
+                .then((res) =>
+                        res.json())
+                .then((data) => {
+                        displayData(data);
+                })
+        };
+
+
+        let displayData=(data)=>{
+                data.map(({name, id, profession}) =>{
+                let cont=document.getElementById("cont");
+                let h1=document.createElement("h1");
+                h1.innerHTML=name;
+                var btn=document.createElement("button");
+                btn.innerText="Delete";
+                btn.addEventListener("click", () =>{
+                        deleteName(id);
+                })
+
+                cont.append(h1,btn);
+                })
+        }
+
+
+                let deleteName= (id)=>{
+                fetch(`http://localhost:3000/post/${id}`,{
+                        method: 'DELETE', 
+                }).then (() => displayData(page));
+        };
+
+        let addTodo =() =>{
+                let data={
+                        name:document.querySelector('input').value,
+                        profession:"Cricket",
+                };
+                fetch('http://localhost:3000/post',{
+                        method: 'Post',
+                        headers:{
+                                'content-type' : 'application/json',
+                        },
+                        body:JSON.stringify(data),
+                }).then(() => displayData());
+        };
+
+
+
+</script>
+

@@ -1,0 +1,19 @@
+{
+  "todos": [
+    {
+      "title": "breakfast",
+      "status": true,
+      "id": 2
+    },
+    {
+      "title": "cricket",
+      "status": true,
+      "id": 3
+    },
+    {
+      "title": "home",
+      "status": true,
+      "id": 6
+    }
+  ]
+}

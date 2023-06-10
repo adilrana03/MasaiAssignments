@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+                #nav{
+                        display: flex;
+                        margin: auto;
+                        justify-content: space-around;
+                        padding: 20px;
+                        background-color: rgb(234, 234, 133);
+
+                }
+                #cont{
+                        display: grid;
+                        grid-template-columns: repeat(4,1fr);
+                        margin-left: 30px;
+                }
+                select{
+                      padding: 20px;
+                      background-color: aquamarine;
+                }
+                a{
+                        text-decoration: none;
+                        color: black;
+                }
+        </style>
+</head>
+<body>
+
+        <div id="nav">
+                <div><h1>Home</h1></div>
+                <div><a href="./search.html"><h2>Search</h2></a></div>
+        </div>
+
+        <div>
+                <select name="" id="filter">
+                        <option value="">Type</option>
+                        <option value="micro">Micro</option>
+                        <option value="large">Large</option>
+                        <option value="brewpub">Brewpub</option>
+                </select>
+        </div>
+       
+
+        <div id="cont">
+                <div id="name"><h1>Name</h1></div>
+                <div><h1>Type</h1></div>
+                <div><h1>City</h1></div>
+                <div><h1>State</h1></div>
+                
+        </div>
+     
+
+       
+</body>
+</html>
+<script src="./home.js"></script>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>OMDB</title>
+        <link rel="stylesheet" href="omdb.css">
+</head>
+<body>
+        <div id="nav">
+                <div>
+                        <div id="logo"><img src="data:image/png;base64,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" alt=""></div>
+                        <div><h3>TV</h3></div>
+                        <div><h3>Movies</h3></div>
+                        <div><h3>Sports</h3></div>
+                        <div><h3>Disney+</h3></div>
+                        <div><h3 id="kids">KIDS</h3></div>
+                </div>
+               
+                <div> 
+                        <input type="text" name="" id="movie-name" placeholder="Search">
+                        <button id="search"> Search </button>
+                </div>
+        </div>
+
+
+        <!-- <h1>Movie Finder</h1> -->
+      
+        <div id="show-movie"></div>
+        <div id="banner">
+                <!-- <img src="https://img1.hotstarext.com/image/upload/f_auto,t_web_m_1x/sources/r1/cms/prod/6530/1326530-h-f2a7e4e4e3d6" alt=""> -->
+        </div>
+        <h2 id="cont">Continue Watching</h2>
+        <div id="continue">
+               <div><img src="https://img1.hotstarext.com/image/upload/f_auto,t_web_hs_3x/sources/r1/cms/prod/4380/184380-h" alt=""></div>
+               <div><img src="https://img1.hotstarext.com/image/upload/f_auto,t_web_hs_3x/sources/r1/cms/prod/5040/1405040-h-745f9aa52bbc" alt=""> </div> 
+                <div><img src="https://img1.hotstarext.com/image/upload/f_auto,t_web_hs_3x/sources/r1/cms/prod/5594/1355594-h-c71aa114a5e4" alt=""></div>
+                <div><img src="https://img1.hotstarext.com/image/upload/f_auto,t_web_hs_3x/sources/r1/cms/prod/727/270727-h" alt=""></div>
+                <div><img src="https://img1.hotstarext.com/image/upload/f_auto,t_web_hs_3x/sources/r1/cms/prod/8720/1078720-h-125f68c67f48" alt=""></div>
+                <div><img src="https://img1.hotstarext.com/image/upload/f_auto,t_web_hs_3x/sources/r1/cms/prod/old_images/MOVIE/7002/1770017002/1770017002-h" alt=""></div>
+        </div>
+</body>
+</html>
+<script src="./omdb.js"></script>

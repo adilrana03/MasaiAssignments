@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Womens Store</title>
+    <style>
+        h1{
+            text-align: center;
+            color: rgb(75, 14, 14);
+        }
+        #main{
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            gap: 10px;
+        }
+        #main > div {
+            text-align: center;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        }
+        img{
+            width: 100%;
+        }
+        h5{
+            margin: 0px;
+            height: 12px;
+            margin-bottom: 6px;
+        }
+        h5 + div{
+            display: flex;
+            justify-content: space-around;
+        }
+        h5 + div > p:last-child{
+            text-decoration: line-through;
+        }
+        button{
+            display: block;
+            width: 50%;
+            margin: auto;
+            background-color: goldenrod;
+            color: aliceblue;
+            padding: 5px 0px;
+            border: none;
+            margin-bottom: 10px;
+        }
+        button:hover{
+          background-color: gold;
+        }
+    </style>
+</head>
+<body>
+  <h2><a href="Cart.html">Go to bag</a></h2>
+    <h1>Womens Store</h1>
+    <div id="main"></div>
+</body>
+</html>
+<script>
+    var womensData = [
+    {
+      image_url:
+        "https://assets.reebok.com/images/w_383,h_383,f_auto,q_auto,fl_lossy,c_fill,g_auto/087fb56922a1418aa99eaed600ef32ef_9366/reebok-identity-logo-fleece-pullover-hoodie.jpg",
+      name: "WOMEN'S REEBOK PRINT LEGGINGS ",
+      price: 1549,
+      strikedoffprice: 1799,
+    },
+    {
+      image_url:
+        "https://assets.reebok.com/images/w_383,h_383,f_auto,q_auto,fl_lossy,c_fill,g_auto/a49a13d298294cc98037ad1900fe652f_9366/workout-ready-pant-program-high-rise-leggings.jpg",
+      name: "WOMEN'S REEBOK POLYTIGHT",
+      price: 1249,
+      strikedoffprice: 1749,
+    },
+    {
+      image_url:
+        "https://assets.reebok.com/images/w_303,h_303,f_auto,q_auto,fl_lossy,c_fill,g_auto/5cfb5650d4964c00ad54ad9b000e59c8_9366/lux-high-waisted-tights.jpg",
+      name: "WOMEN'S REEBOK leggi",
+      price: 699,
+      strikedoffprice: 1245,
+    },
+    {
+      image_url:
+        "https://assets.reebok.com/images/w_303,h_303,f_auto,q_auto,fl_lossy,c_fill,g_auto/260124b81cb041c18053aeb500d07108_9366/nanoflex-tr-2.0-womens-training-shoes.jpg",
+      name: "WOMEN'S REEBOK PP TIGHTS",
+      price: 749,
+      strikedoffprice: 1299,
+    },
+    {
+      image_url:
+        "https://assets.reebok.com/images/w_303,h_303,f_auto,q_auto,fl_lossy,c_fill,g_auto/185b3a745a41400bae56acfc013ee15b_9366/workout-ready-high-rise-shorts.jpg",
+      name: "WOMEN'S REEBOK PP TIGHTS",
+      price: 749,
+      strikedoffprice: 1299,
+    },
+    {
+      image_url:
+        "https://assets.reebok.com/images/w_303,h_303,f_auto,q_auto,fl_lossy,c_fill,g_auto/6a48814cfa9048a1a320ae86008a0a95_9366/reebok-identity-logo-leggings.jpg",
+      name: "WOMEN'S REEBOK CLASSIC LEGGINGS",
+      price: 1399,
+      strikedoffprice: 2799,
+    },
+    {
+      image_url:
+        "https://assets.reebok.com/images/w_303,h_303,f_auto,q_auto,fl_lossy,c_fill,g_auto/437c9f8358c341509065ac6800b04bd4_9366/reebok-identity-fitted-logo-shorts.jpg",
+      name: "WOMEN'S REEBOK CLASSIC TIGHTS",
+      price: 1099,
+      strikedoffprice: 1249,
+    },
+    {
+      image_url:
+        "https://assets.reebok.com/images/w_303,h_303,f_auto,q_auto,fl_lossy,c_fill,g_auto/0248aa47c86047fbaf3aad2100b8bcef_9366/reebok-identity-french-terry-shorts.jpg",
+      name: "UNISEX REEBOK SHOW SHOES",
+      price: 1249,
+      strikedoffprice: 1489,
+    },
+    {
+      image_url:
+        "https://assets.reebok.com/images/w_303,h_303,f_auto,q_auto,fl_lossy,c_fill,g_auto/f2daffd252214130b9b9af20002870a5_9366/nano-x1-womens-training-shoes.jpg",
+      name: "WOMEN'S CLASSIC SHOES",
+      price: 1459,
+      strikedoffprice: 1235,
+    },
+    {
+      image_url:
+        "https://assets.reebok.com/images/w_303,h_303,f_auto,q_auto,fl_lossy,c_fill,g_auto/e189af39776948378f93ae780156f2da_9366/club-c-geo-mid-womens-shoes.jpg",
+      name: "WOMEN'S REEBOK RUNNING RUN ESSENTIALS SHORT SLEEVE GRAPHIC",
+      price: 849,
+      strikedoffprice: 2599,
+    },
+    {
+      image_url:
+        "https://assets.reebok.com/images/w_303,h_303,f_auto,q_auto,fl_lossy,c_fill,g_auto/d71dc26a61e84a56ab7aae840113de07_9366/workout-ready-high-rise-shorts.jpg",
+      name: "WOMEN'S REEBOK TRAINING WOR MESH TIGHTS",
+      price: 1550,
+      strikedoffprice: 2599,
+    },
+    {
+      image_url:
+        "https://assets.reebok.com/images/w_303,h_303,f_auto,q_auto,fl_lossy,c_fill,g_auto/ec61d56076ea457986f0ae8b00eff089_9366/classics-cozy-legging-shorts.jpg",
+      name: "WOMEN'S REEBOK RUNNING OSR HIGH-IMPACT BRA",
+      price: 1399,
+      strikedoffprice: 6599,
+    },
+    // 
+   
+  ];
+  womensData.map(function(e,index){
+    var div = document.createElement("div");
+    var img = document.createElement("img");
+    img.setAttribute("src",e.image_url);
+    img.setAttribute("alt",e.name);
+    var h5 = document.createElement("h5");
+    h5.innerText = e.name;
+    var box = document.createElement("div");
+    var price = document.createElement("p");
+    price.innerText = e.price;
+    var strikedprice = document.createElement("p");
+    strikedprice.innerText = e.strikedoffprice;
+    box.append(price,strikedprice);
+    var btn = document.createElement("button");
+    btn.innerText = "Add to Cart";
+    btn.addEventListener("click",function(){
+      addCart(e);
+    })
+    div.append(img,h5,box,btn);
+    document.querySelector("#main").append(div);
+  })
+
+  var product = JSON.parse(localStorage.getItem("cart")) || [];
+
+  function addCart(e){
+    var prod = womensData.filter(function (element,index){
+      return index == elem;
+    });
+    product.push(e)
+    // productInCart.push(prod[0]);
+    localStorage.setItem("cart",JSON.stringify(product));
+    console.log(productInCart)
+  }
+</script>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+        <script src="https://kit.fontawesome.com/4f7a4dbcbf.js" crossorigin="anonymous"></script>
+    <style>
+         body{
+                color: rgb(54, 120, 155);
+        }
+       
+        #parent{
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+             
+            width: 30%;
+            padding: 20px;
+            margin: auto;
+            margin-top: 20px;
+
+        }
+       
+       
+        h3{
+            text-align: center;
+            color: gre;
+        }
+        input{
+            width: 95%;
+            margin: 15px 1px;
+            padding: 10px;
+            border: 1px gray solid;
+            border-radius: 5px;
+            
+
+        }
+        body{
+            font-family: sans-serif;
+        }
+        input[type=submit]{
+            background-color: rgb(169, 218, 71);
+            border: none;
+            padding: 20px;
+            margin-left: 3%;
+            cursor: pointer;
+            color: white;
+            font-size: 20px;
+            
+        }
+        input[type=submit]:hover{
+        background-color: rgb(125, 177, 20);
+        }
+        input::placeholder{
+            color: grey;
+        }
+        form~p{
+            width:80%;
+            text-align: center;
+            margin: auto;
+            
+            
+        }
+        form >p{
+            font-size: 12px;
+        }
+        .eyes{
+            margin-left: 28%;
+            margin-top: -3%;
+            z-index: 2;
+            position: absolute;
+
+        }
+    </style>
+</head>
+<body>
+
+    <div id="parent">
+        <h3>Sign Up</h3>
+        <form >
+            <label for="">Full Name</label></br>
+            <input id="name" type="text" required placeholder="Enter your full name"/> </br>
+            <label for="">E-Mail</label></br>
+            <input  type="email" id="email" required placeholder="Enter e-mail"/></br>
+            <label for="">Password</label></br>
+            <input type="password" id="myInput" required placeholder="Enter password"></br>
+            <i class="fa-solid fa-eye eyes" onclick="myFunction()"></i>
+            <p>By signing up,I accept the TC's <a href="https://www.bigbasket.com/terms-and-conditions/">Terms and Conditions</a>  and <a href="https://www.bigbasket.com/privacy-policy/"> Privacy Policy</a></p>
+            <input type="submit" value="Sign Up">
+        </form>
+        <p>Already have an account? <a href="login.html">Sign In</a> </p>
+    </div>
+</body>
+</html>
+<script src="../scripts/signup.js"></script>

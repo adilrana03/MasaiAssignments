@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart Page</title>
+    <style>
+        #box{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            text-align: center;
+        }
+        .child,.child1{
+            display: flex;
+            justify-content: end;
+            align-items: baseline;
+        }
+        button{
+            padding: 10px;
+            text-align: center;
+            background-color:teal;
+            color: aliceblue;
+            border: none;
+        }
+        #id1{
+            padding: 10px;
+            text-align: center;
+            background-color:darkblue;
+            color: aliceblue;
+            border: none;
+            margin-left: 500px;
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <h1><a href="womens.html">Home</a></h1>
+
+    <!-- <a href="womens.html"/> -->
+    <div id="CartProd"></div>
+    <button onclick="Payment" id="id1"> Confirm Order</button>
+</body>
+</html>
+<script>
+   document.querySelector("#id1").addEventListener("click",payment);
+   function payment(){
+        window.location.href = 'payment.html';
+   }
+
+
+    var product = JSON.parse(localStorage.getItem("cart")) || [];
+    console.log(product);
+    var page = document.querySelector("#CartProd");
+    //  if(product.length === 0){
+    //     page.innerText = "Feel soo Light";
+    //  }
+    //  else{
+         cal();
+         display();
+    //  }
+     function display(){
+        // page.innerText = "";
+        var page = document.querySelector("#CartProd");
+        product.map(function(el,index){
+            var div = document.createElement("div");
+            div.setAttribute("id","box")
+            var img = document.createElement("img");
+            img.setAttribute("src",el.image_url);
+            var name = document.createElement("h5");
+            name.innerText = el.name;
+            var price = document.createElement("p");
+            price.innerText = el.price;
+            var add = document.createElement("button")
+            add.innerText = "Add same item";
+            var del = document.createElement("button");
+            del.innerText = "Delete";
+            del.addEventListener("click",function(){
+                delProd(el,index);
+            })
+            div.append(img,name,price,add,del);
+            page.append(div);
+        })
+     }
+    //  display();
+    //    function delProd(el,index){
+    //     console.log(el)
+    //     product.splice(index,1);
+    //     localStorage.setItem("cart",JSON.stringify(product));
+    //     window.location.reload();
+    //  }
+
+     function delProd(el,index){
+        var product = JSON.parse(localStorage.getItem("cart")) || [];
+        product.splice(index,1);
+        localStorage.setItem("cart",JSON.stringify(product));
+        window.location.reload();
+     }
+
+     function cal(){
+        var count =0;
+        var total = product.reduce(function(acc,ele){
+            count++;
+            return acc + ele.price;
+        },0)
+        var div = document.createElement("div");
+        div.setAttribute("class","child")
+        var divv = document.createElement("div");
+        divv.setAttribute("class","child1");
+        var no = document.createElement("h3");
+        no.innerText = "No of Items - ";
+        var p1 = document.createElement("p");
+        p1.innerText = count;
+        var p = document.createElement("h3");
+        p.innerText = "Total Price  -   ";
+        var value = document.createElement("h4");
+        value.innerText = " Rs " + total;
+        divv.append(no,p1);
+        div.append(p,value);
+        page.append(divv,div);
+
+     }
+</script>

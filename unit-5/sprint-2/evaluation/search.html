@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+                  #nav{
+                        display: flex;
+                        margin: auto;
+                        justify-content: space-around;
+                        padding: 20px;
+                        background-color: rgb(234, 234, 133);
+
+                }
+                a{
+                        text-decoration: none;
+                        color: black;
+                }
+        </style>
+</head>
+<body>
+        <div id="nav">
+                <div> <a href="./index.html"><h1>Home</h1></div></a>
+                <div><h2>Search</h2></div>
+        </div>
+
+        <input type="text" id="search" placeholder="search by name">
+        <button id="btn"> Search</button>
+
+        <div id="cont"></div>
+        
+</body>
+</html>
+<Script>
+        var btn=document.getElementById("btn");
+        btn.addEventListener("click", fetchdata);
+        var search=document.getElementById("search").value
+        function fetchdata(){
+                fetch(`https://api.openbrewerydb.org/breweries`)
+                .then(function(res){
+                        return res.json();
+                }).then(function(jsondata){
+                        for(let i=0; i<jsonData.length; i++){
+                                if(search===jsonData[i].name)
+                        displaypro(jsondata);
+                        }
+                       
+                }).catch(function(error){
+                        console.log("error");
+                })
+        }
+
+        function displaypro(jsonData){
+
+                console.log(jsonData)
+                var cont=document.getElementById("cont");
+                // var namediv=document.createElement("div");
+        // namediv.setAttribute("id", "box");
+        let name=document.createElement("h2");
+        name.innerText= jsonData.name;
+        // var typediv=document.createElement("div");
+
+        let type= document.createElement("h3");
+        type.innerText=jsonData.brewery_type;
+
+        // var citydiv=document.createElement("div");
+
+        let city= document.createElement("h3");
+        city.innerText=jsonData.city;
+        // var statediv=document.createElement("div");
+
+        var state= document.createElement("h3");
+        state.innerText=jsonData.state;
+        cont.append(name,type,city,state);       
+        }
+</Script>

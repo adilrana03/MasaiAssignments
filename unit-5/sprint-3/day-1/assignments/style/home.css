@@ -1,0 +1,150 @@
+
+body{
+        margin: 0;
+}
+
+#left-div{
+        display: block;
+}
+
+#logo>img{
+        width: 70%;
+        /* margin-left: -30px; */
+}
+#logo{
+        padding-top: 10px;
+}
+
+#master-nav{
+        display: block;
+        position:sticky ;
+        top: 0;
+        width: 100%;
+}
+#master-nav>div{
+        display: flex;
+        background-color: black;
+        /* padding-bottom: 10px; */
+}
+#master-nav>div>h5{
+        margin: auto;
+        background-color: rgb(66, 64, 64);
+        color: white;
+        padding: 8px;
+        border-radius: 8px;
+        font-weight: 100;
+}
+
+      #nav{
+        display: flex;
+        background-color: black;
+        padding: 5px;
+        padding-bottom: 20px;
+      }
+      #nav>div{
+        display: flex;
+        margin: auto;
+        height: 40px;
+      }
+      #end>i{
+        margin: 20px;
+      }
+      #search{
+        width: 60%;
+        background-color: black;
+        color: white;
+      }
+      input{
+        font-size: 15px;
+        border-radius: 30px 0px 0px 30px;
+        padding-left: 15px;
+        width: 100%;
+        background-color: black;
+        color: white;
+        border: 1px solid rgb(66, 65, 65);
+       
+      }
+      #btn{
+        border-radius: 0px 30px 30px 0px;
+        padding: 5px;
+        background-color: black;
+        border: 1pt solid rgb(76, 75, 75);
+      }
+      #bottom-div{
+        padding-bottom: 10px;
+        padding-left: 4%;
+        /* width: 90%; */
+      }
+      #bottom-div + h4{
+        background-color: white;
+      }
+      .fa-solid{
+        font-size: 20px;
+        margin: 15px;
+        color: rgb(232, 230, 230);
+        margin-top: 9px;
+      }
+      .fa-magnifying-glass{
+        margin-top: 3px;
+      }
+      #cont{
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        gap: -5px -5px;
+        background-color: black;
+        width: 100%;
+        margin-left: 5%;
+      }
+      #cont > div{
+        padding-bottom: -8%;
+      }
+      #video-img{
+        border-radius: 9px;
+      }
+
+      #display{
+        display: flex;
+        background-color: black;
+      }
+      #left-div{
+        width: 5%;
+        background-color: black;
+        color: white;
+        position: fixed;
+        top:0;
+        left: 0;
+        padding-bottom: 50%;
+        margin-top: 5%;
+
+      }
+      #left-div>div{
+        text-align: center;
+      }
+      h6{
+        margin-top: -1px;
+      }
+      .fa-list{
+        color: white;
+        margin-right: 40px;
+        margin-left: -35px;
+      }
+      #filterdiv{
+        color: white;
+        background-color: rgb(9, 10, 10);
+        margin-left: 10%;
+      }
+      #select{
+        font-size: 16px;
+        padding: 4px;
+        cursor: pointer;
+        border-radius: 8px;
+        margin-bottom: 5px;
+      }
+
+      #ab{
+        display: block;
+        margin-left: 2%;
+
+      }
+
+      

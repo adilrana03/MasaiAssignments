@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment page</title>
+    <style>
+        h1{
+            text-align: center;
+            color: brown;
+            font-style: italic;
+        }
+        form{
+            /* display: flex; */
+            width: 300px;
+            margin: auto;
+            padding: 20px;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        }
+        input{
+            font-size: large;
+            margin: 20px;
+        }
+        label{
+            font-size: large;
+            margin: 20px;
+        }
+        input[type="submit"]{
+            background-color: rgb(13, 13, 62);
+            width: 235px;
+            color: aliceblue;
+            border: none;
+            height: 30px;
+
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Payment Gateway</h1>
+    <form>
+        <label> Customer Name</label>
+        <br>
+        <input type="text" placeholder="Enter your Name" id="name"/>
+        <br>
+        <label> Account Number</label>       
+        <br>  
+        <input type="number" placeholder="Enter your account no" id="acNo"/><br>
+        <label> CVV </label>
+        <br>
+        <input type="number" placeholder="type CVV" id="cvv"/><br>
+        <label> Expiry Date</label>
+        <br>
+        <input type="number" placeholder="Enter expiry date" id="expiry"/><br>
+        <input type="submit" value="payment" id="pay"/>
+    </form>
+</body>
+</html>
+<script>
+    document.getElementById("pay").addEventListener("click",payment)
+    var data = 1234;
+    function payment(e){
+        e.preventDefault();
+        window.location.href = 'OTP.html'
+    }
+</script>

@@ -1,0 +1,24 @@
+{
+  "post": [
+    {
+      "id": 1,
+      "title": "cricket",
+      "name": "kohli"
+    },
+    {
+      "name": "sky",
+      "profession": "Cricket",
+      "id": 5
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

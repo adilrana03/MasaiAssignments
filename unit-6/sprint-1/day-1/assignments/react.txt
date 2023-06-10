@@ -1,0 +1,12 @@
+What is React?
+Ans-
+
+Who made React?
+What is Babel?
+How does Babel convert html code in React into valid code?
+What is ReactDOM used for? Write an example?
+What are the packages that you need to import for react to work with?
+How do you add react to a web application?
+What is React.createElement?
+What are the three properties that createElement accept?
+What is the meaning of render and root?

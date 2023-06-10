@@ -1,0 +1,38 @@
+.list {
+  width: 50%;
+  margin: auto;
+  margin-top: 20px;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 25%;
+  margin: auto;
+  margin-top: 20px;
+  gap: 20px;
+  padding: 20px;
+  box-shadow: 0 0 10px black;
+  border-radius: 10px;
+
+}
+table,
+td,
+th {
+  border: 1px solid black;
+  border-radius: 5px;
+  margin: auto;
+}
+thead:nth-child() {
+  width: 100px;
+}
+td > button {
+  text-decoration: none;
+  border: none;
+  background-color: black;
+  color: blanchedalmond;
+  padding: 5px;
+}
+td > a {
+  text-decoration: none;
+  color: green;
+}

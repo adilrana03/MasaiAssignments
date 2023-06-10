@@ -1,0 +1,30 @@
+1. All students whose gender is male 
+Query =   db.students.find({gender:'Male'})
+
+2.==========> all students whose ID is even ==========>
+Query =   db.students.find({id : {$mod : [2,0]}})
+
+3. ==========>  students who currently live in Japan ===>
+Query = assign-db> db.students.find({native : 'Japan'})
+
+4.==========>   students who are female and live in India ===========>
+Query =  db.students.find({$and :[ {gender : "Female"},{native : "India"}]})
+      OR
+Query =  db.students.find({gender : "Female", native : "India"})
+
+5.==========>   students who are more than 25 years old >
+Query =  db.students.find({age: {$gt : 25}})
+
+6. ==========>  students who are less than 50 years old and live in United State ==========>
+Query =  db.students.find({$and : [{age: {$lt : 50}},{native : "United States"}]})
+
+7.==========>   Total number of students who want to relocate to France (count only)==========>
+Query =  db.students.find({relocate_to : "France"}).count()
+
+8. ==========>  Total number of students who are from USA and want to relocate to russia, sort them by age in ascending order
+Query = db.students.find({$and : [{native : "United States"}, {relocate_to : "Russia"}]}).sort({age : 1})
+       OR
+Query =  db.students.find({native : "United States",relocate_to : "Russia"}).sort({age : 1})
+
+9. ==========>get all students, sort them by total number of family member ASC and age DESC order==========>
+Query = db.students.aggregate({$sort : {family_members: 1, age : -1}})

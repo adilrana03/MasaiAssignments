@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Youtube</title>
+        <link rel="stylesheet" href="./style/home.css">
+        <script src="https://kit.fontawesome.com/4f7a4dbcbf.js" crossorigin="anonymous"></script>
+</head>
+<body onload="trending()">   
+        <div id="master-nav">
+                <div id="nav">
+                        <div id="logo">
+                                <i class="fa-solid fa-list"></i>
+                                <img src="./youtubelogo 2.jpeg" alt="">
+                        </div>
+                        <div id="search">
+                                <input type="text" placeholder="Search" id="query">
+                                <button onclick="fetchData()" id="btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+                                <i class="fa-solid fa-microphone"></i>
+                        </div>
+        
+                        <div id="end-logo">
+                                <i class="fa-solid fa-video"></i>
+                                <i class="fa-solid fa-bell"></i>
+                                <i class="fa-solid fa-image"></i>
+                        </div>
+                </div>
+                <div id="bottom-div">
+                        <h5>All</h5>
+                        <h5>Mixes</h5>
+                        <h5>Music</h5>
+                        <h5>Nushrat</h5>
+                        <h5>Games</h5>
+                        <h5>Comedy</h5>
+                        <h5>Java</h5>
+                        <h5>Java</h5>
+                        <h5>JavaScript</h5>
+                        <h5>JavaScript</h5>
+                        <h5>cricket</h5>
+                </div>
+        </div>
+
+        <div id="display">
+                <div id="left-div">
+                        <div>
+                                <i class="fa-solid fa-house"></i>
+                                <h6>Home</h6>
+                        </div>
+                        <div>
+                                <i class="fa-solid fa-play"></i>
+                                <h6>Shorts</h6>
+                        </div>
+                        <div>
+                                <i class="fa-brands fa-google-play"></i>
+                                <h6>Subscription</h6>
+                        </div>
+                        <div>
+                                <i class="fa-solid fa-book"></i>
+                                <h6>Subscription</h6>
+                        </div>
+
+                </div>
+        <div id="ab">
+                <div id="filterdiv">
+                        <select  name="" id="select">
+                                <option  id="video">Type</option>
+                                <option value="video" id="video">Video</option>
+                                <option value="channel" id="channel">Channel</option>
+                                <option value="playlist" id="playlist">Playlist</option>
+                                <option value="movie" id="movie">Movie</option>
+                        </select>  
+                                <select name="" id="">
+                                        <option value="">a</option>
+                                        <option value="">a</option>
+                                        <option value="">a</option>
+                                        <option value="">a</option>
+                                        <option value="">a</option>
+
+                                </select>
+                         
+                </div>
+                <div id="cont"></div>
+        </div>  
+        </div>
+
+</body>
+</html>
+<script src="./scripts/youtube.js"></script>

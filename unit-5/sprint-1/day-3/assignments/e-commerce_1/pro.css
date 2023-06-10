@@ -1,0 +1,47 @@
+#container{
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        gap: 50px 10px;
+        margin: 10px;
+        margin-bottom: 30px;
+        width: 98%;
+}
+#container>div{
+        margin: auto;
+        display: grid;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+        padding: 30px;
+        width: 60%;
+}
+#container>div>img{
+        width: 100%;
+}
+#nav{
+        display: flex;
+        width: 100%;
+        background-color: rgb(51, 53, 52);
+        justify-content:space-evenly;
+        padding: 10px;
+        color: white;
+}
+a{
+        text-decoration: none;
+        color: white;
+        margin-right: -100px;
+}
+#nav>div{
+        cursor: pointer;
+}
+body{
+        margin: 0;
+}
+#nav>div>h3{
+        color: yellow;
+        font-size: 25px;
+}
+#sold{
+        cursor: pointer;
+}
+#remove{
+        cursor: pointer;
+}

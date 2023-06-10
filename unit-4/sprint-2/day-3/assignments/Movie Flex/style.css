@@ -1,0 +1,33 @@
+#container1>div{
+width:32%;
+margin: 10px;
+text-align: center;
+box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px;
+}
+#container1{
+    display: flex;
+    width: 99%;
+    margin: auto;
+    margin-bottom: 15px;
+}
+div>img{
+    width: 100%;
+}
+h5{
+    background-color: rgb(123, 205, 232);
+    padding: 8px;
+    width: 20%;
+    margin: auto auto 20px auto;
+
+}
+#container2>div{
+    width: 32%;
+    margin: 10px;
+    text-align: center;
+    box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px;
+    }
+    #container2{
+        display: flex;
+        width: 99%;
+        margin: auto;
+    }

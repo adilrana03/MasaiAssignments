@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WEATHER-III</title>
+    <style>
+      #upper {
+        background-color: rgb(186, 215, 224);
+        text-align: center;
+        margin: -20px;
+        padding: 10px;
+      }
+      input {
+        width: 30%;
+        border: none;
+        height: 40px;
+        font-size: 18px;
+        padding-left: 10px;
+      }
+      button {
+        border: none;
+        width: 10%;
+        height: 42px;
+        background-color: black;
+        color: aliceblue;
+        margin-left: -3px;
+        cursor: pointer;
+      }
+      #parent {
+        display: flex;
+      }
+      #child1 {
+        width: 40%;
+        margin: auto;
+      }
+      #child1 > p,
+      h1,
+      h2,
+      h3 {
+        text-align: center;
+      }
+      #image{
+        width: 100%;
+      }
+      #child2 {
+        width: 50%;
+        margin: auto;
+      }
+      #child2 > img{
+        width: 100%;
+      }
+      .mapouter {
+                position: relative;
+                text-align: right;
+                height: 500px;
+                width: 600px;
+              }
+              .gmap_canvas {
+                overflow: hidden;
+                background: none !important;
+                height: 500px;
+                width: 600px;
+              }
+              .date{
+                color: red;
+              }
+              .temp{
+                color: rgb(24, 24, 99);
+              }
+              .info{
+                font-size: 20px;
+                color: rgb(51, 2, 96);
+                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                display: grid;
+                grid-template-columns: repeat(2,1fr);
+                margin: auto;
+              }
+    </style>
+  </head>
+  <body onload="  getCurrentPosition()">
+    <div id="upper">
+      <h1>Weather Information</h1>
+      <br/>
+      <input type="text" placeholder="Enter City Name" id="city" />
+      <button onclick="handleSubmit()">Search</button>
+    </div>
+    <br />
+    <div id="forecast"></div>
+
+    <div id="parent">
+      <div id="child1"></div>
+      <div id="child2">
+        <div class="mapouter">
+          <div class="gmap_canvas">
+            <iframe
+              width="600"
+              height="500"
+              id="gmap_canvas"
+              src=""
+              frameborder="0"
+              scrolling="no"
+              marginheight="0"
+              marginwidth="0"
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+<script>
+
+  function handleSubmit() {
+    var city = document.getElementById("city").value;
+//     var api_key=f17d74ad6ffcb7fa25b9ad388f77c872;
+    var cityurl = "https://api.openweathermap.org/data/2.5/weather?q="+city+"&appid=f17d74ad6ffcb7fa25b9ad388f77c872&units=metric";
+    Weather(cityurl);
+  }
+  async function Weather(url) {
+    var res = await fetch(url);
+    var data = await res.json();
+    console.log(data);
+    display(data);
+  }
+
+  var weatherObj = {
+    Rain: "https://giffiles.alphacoders.com/105/105408.gif",
+    Haze: "https://th.bing.com/th/id/OIP.WIRVmmBPdSg3pQry2d0_oQHaDn?pid=ImgDet&rs=1",
+    Mist: "https://th.bing.com/th/id/OIP.QP9AIa2SeoxwWGs7zSduTgHaEH?pid=ImgDet&rs=1",
+    Clouds:"https://i0.wp.com/codemyui.com/wp-content/uploads/2016/05/css-cloud.gif",
+  };
+  function display(data) {
+        console.log(data.weather[0].main)
+    document.getElementById("child1").innerText = "";
+    var box = document.createElement("div");
+    var temp = new Date();
+    month = "Sep";
+    date = temp.getDate();
+    hour = temp.getHours();
+    min = temp.getMinutes();
+    var comDate = month + " " + date + ", " + hour + ":" + min;
+    var date = document.createElement("h3");
+    date.innerText = comDate;
+    date.setAttribute("class","date")
+    var name = document.createElement("h1");
+    name.innerText = data.name;
+    var temp = document.createElement("h2");
+    temp.innerText = data.main.temp;
+    temp.setAttribute("class","temp")
+    var imgTag = document.createElement("img");
+    if (weatherObj[data.weather[0].main]) {
+      imgTag.src = weatherObj[data.weather[0].main];
+    } else {
+      imgTag.src ="https://th.bing.com/th/id/OIP.grr8eQB7qNxYIxI9pjnHFgHaDO?pid=ImgDet&rs=1";
+    }
+    imgTag.setAttribute("id","image");
+    var feel = document.createElement("h3");
+    feel.innerText = `Feels Like ${data.main.feels_like},  ${data.weather[0].main}`;
+    var info=document.createElement("div");
+    info.setAttribute("class","info")
+    var hum = document.createElement("p");
+    hum.innerText = `Humidity :- ${data.main.humidity}`;
+    var minTemp = document.createElement("p");
+    minTemp.innerText = `Min Temp :- ${data.main.temp_min}`;
+    var maxTemp = document.createElement("p");
+    maxTemp.innerText = `Max Temp :- ${data.main.temp_max}`;
+    var vis = document.createElement("p");
+    vis.innerText = `Visibility :- ${data.visibility}`;
+    var press = document.createElement("p");
+    press.innerText = "Pressure :- " + data.main.pressure + " hPa";
+    info.append(hum,minTemp,maxTemp,vis,press);
+    box.append(date,name,temp,imgTag,feel);
+    document.getElementById("child1").append(box,info);
+    document.getElementById("gmap_canvas").src = "https://maps.google.com/maps?q="+data.name+"&t=&z=13&ie=UTF8&iwloc=&output=embed&units=metric"
+  }
+ function getCurrentPosition(){
+    const options = {
+  enableHighAccuracy: true,
+  timeout: 5000,
+  maximumAge: 0
+};
+
+function success(pos) {
+  const crd = pos.coords;
+
+  console.log('Your current position is:');
+  console.log(`Latitude : ${crd.latitude}`);
+  console.log(`Longitude: ${crd.longitude}`);
+  console.log(`More or less ${crd.accuracy} meters.`);
+  getWeather(crd.latitude, crd.longitude);
+}
+
+function error(err) {
+  console.warn(`ERROR(${err.code}): ${err.message}`);
+}
+
+navigator.geolocation.getCurrentPosition(success, error, options);
+  }
+
+  function getWeather(lat,lon){
+    const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${"4c57c71add888cc8ef7d4b352c40be09"}`
+    Weather(url);
+  }
+</script>

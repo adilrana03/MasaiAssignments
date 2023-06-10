@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home Page</title>
+  <link rel="stylesheet" href="index.css" />
+</head>
+
+<body>
+  <div id="links">
+    <div><a href="index.html">Home</a></div>
+    <div><a href="applied.html">Applied Jobs</a></div>
+    <div><a href="bookmark.html">Bookmarks</a></div>
+  </div>
+  <form action="" id="form">
+    <h2>Enter Your Application Details</h2>
+    <input placeholder="Enter Name" id="n" name="name" type="text" />
+    <input placeholder="Enter email" type="e" name="email" id="e" />
+    <select name="role" id="r">
+      <option value="FSD">FSD</option>
+      <option value="Backend">Backend</option>
+      <option value="Frontend">Frontend</option>
+    </select>
+    <input id="s" type="number" placeholder="Enter expected salary in lakhs per annum " />
+    <input id="submit" type="submit" name="submit" value="Submit" />
+  </form>
+</body>
+<script>
+  //you need to code here
+  // var bookmarks = JSON.parse(localStorage.getItem("bookmarks")) || [];
+
+  // displayBookmarks();
+  // function displayBookmarks() {
+  //   console.log("hello");
+  //   // document.getElementById("body").innerText = "ABC";
+  //   bookmarks.map(function (e, index) {
+  //     var row = document.createElement("tr");
+  //     var td1 = document.createElement("td");
+  //     td1.innerText = e.name;
+  //     var td2 = document.createElement("td");
+  //     td2.innerText = e.email;
+  //     var td3 = document.createElement("td");
+  //     td3.innerText = e.role;
+  //     var td4 = document.createElement("td");
+  //     td4.innerText = "Delete";
+  //     td4.style.cursor = "pointer";
+  //     td4.style.color = "red";
+  //     td4.addEventListener("click", function () {
+  //       deleteBookmark(index);
+  //     });
+
+  //     row.append(td1, td2, td3, td4);
+  //     document.getElementById("body").append(row);
+  //   });
+  // }
+
+  // function deleteBookmark(i) {
+  //   bookmarks.splice(i, 1);
+  //   localStorage.setItem("bookmarks", JSON.stringify(bookmarks));
+  //   displayBookmarks();
+  // }
+
+
+  var jobArr = JSON.parse(localStorage.getItem("jobList")) || [];
+  document.getElementById("submit").addEventListener("click", myForm);
+
+  function myForm() {
+    event.preventDefault();
+    console.log("form from applied html");
+    var name = document.getElementById("n").value;
+    console.log(name);
+    var email = document.getElementById("e").value;
+    console.log(email);
+    var role = document.getElementById("r").value;
+    console.log(role);
+    var salary = document.getElementById("s").value;
+    console.log(salary);
+    var jobObj = {
+      name: name,
+      email: email,
+      role: role,
+      salary: salary
+    };
+    console.log(jobObj);
+    jobArr.push(jobObj);
+    console.log(jobArr);
+    localStorage.setItem("jobList", JSON.stringify(jobArr));
+    document.getElementById("name").value = "";
+    document.getElementById("email").value = "";
+    document.getElementById("role").value = "";
+    document.getElementById("salary").value = "";
+  }
+</script>
+
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>YouTube</title>
+        <link rel="stylesheet" href="./style/home.css">
+        <script src="https://kit.fontawesome.com/4f7a4dbcbf.js" crossorigin="anonymous"></script>
+        <style>
+                #frame{
+                        margin: auto;
+                }
+        </style>
+</head>
+<body onload="playVideo()">
+        <div id="master-nav">
+                <div id="nav">
+                        <div id="logo">
+                                <div>
+                                        <i class="fa-solid fa-list"></i>
+                                </div>
+                                <img src="./youtubelogo 2.jpeg" alt="">
+                        </div>
+                        <div id="search">
+                                <input type="text" placeholder="Search" id="query">
+                                <button id="btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+                                <i class="fa-solid fa-microphone"></i>
+                        </div>
+        
+                        <div id="end-logo">
+                                <i class="fa-solid fa-video"></i>
+                                <i class="fa-solid fa-bell"></i>
+                                <i class="fa-solid fa-image"></i>
+                        </div>
+                </div>
+
+
+
+        <iframe width="920" height="620" 
+        id="frame"
+        src="" 
+        title="YouTube video player" frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen></iframe>
+</body>
+</html>
+<script>
+        let playVideo=()=>{
+        let{id:{videoId}}=JSON.parse(localStorage.getItem("myvideo"));
+        console.log(videoId);
+        console.log(localStorage);
+        let frame=document.getElementById("frame");
+        frame.src=`https://www.youtube.com/embed/${videoId}`
+        }
+</script>

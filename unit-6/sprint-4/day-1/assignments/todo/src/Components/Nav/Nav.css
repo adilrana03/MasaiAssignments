@@ -1,0 +1,17 @@
+* {
+        margin: 0px;
+        padding: 0px;
+      }
+      
+      .nav {
+        display: flex;
+        background-color: black;
+        height: 50px;
+        align-items: center;
+        justify-content: space-evenly;
+      }
+      .nav > a {
+        text-decoration: none;
+        color: whitesmoke;
+      }
+      

@@ -1,0 +1,79 @@
+* {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      
+      form {
+        margin: 0 auto;
+        margin-top: 50px;
+        width: 30%;
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+        padding: 30px;
+      }
+      
+      input[type="email"],
+      select,
+      textarea {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        margin-top: 6px;
+        margin-bottom: 16px;
+        resize: vertical;
+      }
+      input[type="number"],
+      select,
+      textarea {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        margin-top: 6px;
+        margin-bottom: 16px;
+        resize: vertical;
+      }
+      input[type="password"],
+      select,
+      textarea {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        margin-top: 6px;
+        margin-bottom: 16px;
+        resize: vertical;
+      }
+      input[type="submit"] {
+        background-color: #93a8c0d3;
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 20px;
+        cursor: pointer;
+        width: 100%;
+        font-size: 20px;
+      }
+      input[type="submit"]:hover {
+        background-color: #3973b6;
+      }
+      label {
+        font-size: 20px;
+      }
+      h1 {
+        font-family: monospace;
+        margin-top: 40px;
+        font-size: 40px;
+        text-transform: uppercase;
+        text-align: center;
+      }
+      
+      div > img {
+        margin-top: 40px;
+        margin-left: 600px;
+        width: 9%;
+      }

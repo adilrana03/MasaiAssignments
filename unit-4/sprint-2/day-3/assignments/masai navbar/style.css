@@ -1,0 +1,30 @@
+#navbar{
+    display: flex;
+    margin: 30px;
+    padding: 10px;
+    
+}
+#navbar>img{
+    margin: auto 70px;
+}
+
+h4{
+    padding: 12px;
+    margin: auto;
+    
+}
+p{
+    padding: 15px;
+    background-color: rgb(245, 247, 248);
+    color: rgb(16, 132, 186);;
+    border-radius: 10%;
+}
+P+h5{
+    color: red;
+    border: 2px red solid;
+    margin: auto 35px;
+    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 10%;
+    padding: 15px;
+}
+

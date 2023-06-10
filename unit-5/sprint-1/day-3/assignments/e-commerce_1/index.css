@@ -1,0 +1,65 @@
+form {
+         font-size: 40px; 
+        padding: 10px;
+        margin: auto;
+        align-items: center;
+        text-align: center;
+        color: rgb(234, 111, 66);
+}
+input {
+        display: block;
+        font-size: 20px;
+        width: 90%;
+        margin: auto;
+        margin-top: 5px;
+        margin-bottom: 20px;
+        padding: 3px;
+
+}
+#cont{
+        background-color: rgb(230, 228, 228);
+        padding: 20px;
+        width: 30%;
+        margin: auto;
+        margin-top: 15px;
+}
+
+select{
+        font-size: 20px; 
+        width: 92%;
+        padding: 3px;
+        margin-bottom:10px;
+        /* margin-top: -10px; */
+}
+submit{
+        margin-top: 5px;
+}
+
+#nav{
+        display: flex;
+        width: 100%;
+        background-color: rgb(51, 53, 52);
+        justify-content:space-around;
+        padding: 10px;
+        color: white;
+}
+h2>a{
+        text-decoration: none;
+        color: rgb(253, 251, 251);
+        margin-right: -100px;
+}
+input[type="submit" ] {
+        margin-top: 20px;
+        width: 92%;
+        padding: 5px;
+        border-radius: 10px;
+        background-color: rgb(227, 250, 206);
+        color: black;
+        cursor: pointer;
+}
+#nav>div{
+        cursor: pointer;
+}
+body{
+        margin: 0;
+}

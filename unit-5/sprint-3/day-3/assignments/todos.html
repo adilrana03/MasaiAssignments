@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+                #nav{
+                        text-align: center;
+                        background-color: blueviolet;
+                        color: azure;
+                        padding:20px ;
+                }
+                body{
+                        text-align: center;
+                        margin: 0;
+                }
+                input{
+                        margin: 10px;
+                        font-size: 20px;
+                        padding: 5px;
+                        border-radius: 6px;
+                }
+                #addbtn{
+                        font-size: 20px;
+                        padding: 5px;
+                        border-radius: 5px;
+                        cursor: pointer;
+                        background-color: rgb(142, 177, 242);
+                }
+                #cont {
+                        text-align: left;
+                        margin-left: 39%;
+                }
+                #toggle{
+                        font-size: 17px;
+                        margin-right: 5px;
+                        cursor: pointer;
+
+                }
+                #delete{
+                        font-size: 17px;
+                        background-color: red;
+                        color: white;
+                        cursor: pointer;
+
+                }
+                #next, #prev{
+                        margin-top: 40px;
+                        padding: 4px 8px;
+                        cursor: pointer;
+                }
+                #span{
+                        background-color: green;
+                }
+        </style>
+</head>
+<body onload="getTodo()">
+        <div id="nav"><h1>My Todo</h1></div>
+        <input type="text" placeholder="Enter Todo">
+        <button id="addbtn" onclick="addTodo()">Add Todo</button>
+        <div id="cont">
+                <!-- ----- -->
+        </div>
+        <button onclick="prev()" id="prev">Prev</button>
+        <button onclick="next()" id="next">Next</button>        
+</body>
+</html>
+<Script>
+        let prevBtn=document.getElementById("prev");
+        let nextBtn=document.getElementById("next");
+        let page=1;
+        if(page <= 1){
+                prevBtn.setAttribute('hidden', 'hidden');
+        }
+        let getTodo=(page)=>{
+                fetch(`http://localhost:4040/todos?_page=${page}&_limit=3`)
+                .then((res) => res.json())
+                .then((data) =>{
+                        if(data.length == 0){
+                                nextBtn.setAttribute('hidden', 'hidden')
+                        }
+                        display(data);
+                });
+        };
+
+        let display= (data) => {
+                document.getElementById('cont').innerHTML=null;
+                console.log(data);
+                data.map(({title,id,status}) =>{
+                        let h2=document.createElement('h2');
+                        h2.innerHTML=`${title}`;
+                        let span=document.createElement("span");
+                        span.innerHTML= `${status ? 'Done ✅' : 'Not Done ❌'}`
+                        span.setAttribute("id", "span");
+                        h2.append(span);
+                
+                        let togglebtn=document.createElement('button');
+                        togglebtn.setAttribute("id","toggle");
+                        togglebtn.textContent='Toggle';
+                        togglebtn.addEventListener('click', () => {
+                                toggleStatus(id, !status);
+                        });
+                        let deletebtn=document.createElement('button');
+                        deletebtn.setAttribute("id","delete");
+                        deletebtn.textContent='Delete';
+                        deletebtn.addEventListener('click', ()=>{
+                                deleteTodo(id);
+                        });
+                        document.getElementById('cont')
+                        .append(h2,togglebtn,deletebtn);
+                });
+        };
+        
+
+
+        let addTodo =() =>{
+                let payload={
+                        title:document.querySelector('input').value,
+                        status:false,
+                };
+                fetch('http://localhost:4040/todos',{
+                        method: 'Post',
+                        headers:{
+                                'content-type' : 'application/json',
+                        },
+                        body:JSON.stringify(payload),
+                }).then(() => getTodo());
+        };
+        let toggleStatus=(id, newStatus) => {
+                fetch(`http://localhost:4040/todos/${id}`,{
+                        method:'PATCH',
+                        headers:{
+                                'content-type':'application/json',
+                        },
+                        body:JSON.stringify({status:newStatus}),
+                }).then(() => getTodo(page));
+        };
+
+
+        let deleteTodo= (id)=>{
+                fetch(`http://localhost:4040/todos/${id}`,{
+                        method: 'DELETE', 
+                }).then (() => getTodo(page));
+        };
+
+        let prev=()=>{
+                page-=1;
+                pageChange();
+                getTodo(page);
+        };
+        let next=()=>{
+                page+=1;
+                pageChange();
+                getTodo(page);
+        }
+        let pageChange= () => {
+                if(page <= 1){
+                prevBtn.setAttribute('hidden', 'hidden');
+        }else{
+                prevBtn.removeAttribute('hidden');
+        }
+
+        if(page){
+                nextBtn.removeAttribute('hidden');
+        }
+        }
+
+</Script>

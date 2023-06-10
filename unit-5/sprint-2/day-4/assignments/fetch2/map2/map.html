@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Map 2</title>
+        <link rel="stylesheet" href="map.css">
+        
+</head>
+        <!-- <body onload="getCurrentPosition()"> -->
+                <body onload="getCurrentPosition()">
+                <div id="upper">
+                  <h1>Weather Information</h1>
+                  <br/>
+                  <input type="text" placeholder="Enter City Name" id="cityInput" />
+                  <button onclick="GetInfo()">Search</button>
+                </div>
+
+                <h1 id="cityName"></h1>
+                <div id = "weatherContainer">
+                        <div class = "icons">
+                                <h4>Sunday</h4>
+                            <p class="weather" id="day1"></p>
+                            <div class="image"><img src="dots.png" class="imgClass" id="img1"></div>
+                            <p class="minValues" id="day1Min">Loading...</p>
+                            <p class="maxValues" id="day1Max">Loading...</p>
+                        </div>
+                        <div class = "icons">
+                                <h4>Monday</h4>
+                            <p class="weather" id="day2"></p>
+                            <div class="image"><img src="dots.png" class="imgClass" id="img2"></div>
+                            <p class="minValues" id="day2Min">Loading...</p>
+                            <p class="maxValues" id="day2Max">Loading...</p>
+                        </div>
+                        <div class = "icons">
+                                <h4>tuesday</h4>
+                            <p class="weather" id="day3"></p>
+                            <div class="image"><img src="dots.png" class="imgClass" id="img3"></div>
+                            <p class="minValues" id="day3Min">Loading...</p>
+                            <p class="maxValues" id="day3Max">Loading...</p>
+                        </div>
+                        <div class = "icons">
+                                <h4>Wednesday</h4>
+                            <p class="weather" id="day4"></p>
+                            <div class="image"><img src="dots.png" class="imgClass" id="img4"></div>
+                            <p class="minValues" id="day4Min">Loading...</p>
+                            <p class="maxValues" id="day4Max">Loading...</p>
+                        </div>
+                        <div class = "icons">
+                                <h4>thursday</h4>
+                            <p class="weather" id="day5"></p>
+                            <div class="image"><img src="dots.png" class="imgClass" id="img5"></div>
+                            <p class="minValues" id="day5Min">Loading...</p>
+                            <p class="maxValues" id="day5Max">Loading...</p>
+                        </div>
+                        <div class = "icons">
+                                <h4>Friday</h4>
+                                <p class="weather" id="day6"></p>
+                                <div class="image"><img src="dots.png" class="imgClass" id="img6"></div>
+                                <p class="minValues" id="day6Min">Loading...</p>
+                                <p class="maxValues" id="day6Max">Loading...</p>
+                            </div>
+                            <div class = "icons">
+                                <h4>Saturday</h4>
+                                <p class="weather" id="day7"></p>
+                                <div class="image"><img src="dots.png" class="imgClass" id="img7"></div>
+                                <p class="minValues" id="day7Min">Loading...</p>
+                                <p class="maxValues" id="day7Max">Loading...</p>
+                            </div>
+                   
+                </div>
+        
+
+        
+</body>
+</html>
+<script src="./map.js">
+
+</script>

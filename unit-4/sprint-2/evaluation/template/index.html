@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web-101 C2</title>
+    <style>
+.top>div{
+  display: flex;
+  margin: 50px
+}
+h1,p{
+  width: 70%;
+  margin-left:  auto -30px auto 50px;
+
+}
+h1{
+  font-size: 35px;
+}
+p{
+  font-size: 18px;
+ 
+}
+div+img{
+  width: 40%;
+  height: 350px;
+  margin-left: -60px;
+  margin-top: 20px;
+}
+.top{
+  width: 85%;
+  margin: auto;
+  padding-bottom: 80px;
+}
+
+
+.mid>div+div{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 20px 20px;
+  width: 85%;
+  margin: auto;
+}
+.mid>div>img{
+  width: 88%;
+  height: 200px;
+}
+.mid>div{
+  text-align: center;
+  width: 69%;
+  margin: auto;
+}
+.mid>div{
+  width: 80%;
+  margin-left: 300px;
+}
+ .bottom>div+div{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  text-align: center;
+  
+ }
+ .bottom>div>div>img{
+  height: 230px;
+  width: 80%;
+  padding: 10px;
+  margin-left: 50px;
+ }
+ img+h2{
+    width: 80%;
+    margin: auto;
+ }
+ h2+p{
+  border: 2px solid;
+  padding: 3px;
+  height: 20px;
+  width: 40%;
+  margin: auto;
+  margin-top: 15px;
+ }
+ .bottom+div{
+  width: 50%;
+  margin: auto;
+  text-align: center;
+ 
+ }
+ .bottom{
+  text-align: center;
+  width: 85%;
+  margin: auto;
+  margin-top: 100px;
+ }
+
+
+
+
+      @media all and (max-width: 1100px) and (min-width:601px) {
+       /* Medium Screen Styles  */
+       .top>div{
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+    }
+    .mid>div+div{
+      display: grid;
+        grid-template-columns: repeat(2,1fr);
+    }
+    .bottom>div+div{
+      display: grid;
+        grid-template-columns: repeat(2,1fr);
+    }
+      
+      }
+
+      @media all and (max-width: 601px) and (min-width:200px) {
+        /* Small Screen Styles  */
+        .top>div{
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+    }
+    .mid>div+div{
+      display: grid;
+        grid-template-columns: repeat(1,1fr);
+    }
+    .bottom>div+div{
+      display: grid;
+        grid-template-columns: repeat(1,1fr);
+    }
+      }
+    </style>
+  </head>
+
+
+
+  <body>
+    <div class="top">
+    <div>
+      <div>
+      <h1>Sobre a Plataforma de Gestao MarketUP</h1>
+      <p>El Sistema France is an association dedicated to promoting and reproducing the fantastic global success of El
+        <br><br>
+       Sistema in France. Since its creation in 2013, El Sistema France has developed and supported several pilot programmes for disenfranchised children living in cognitively, culturally, socially or economically difficult circumstances. <br><br>
+      All El Sistema France centres commit to a minimum of eight to 10 hours of teaching a week, the formation of a symphony 
+      </p>
+    </div>
+      <img src="https://marketup.com/wp-content/uploads/2022/06/Home-Mock.png" alt="">
+
+    </div>
+      <!-- Two Divs should be inside here  -->
+    </div>
+    <div class="mid">
+      <!-- Two Divs should be inside here and on the second div you have to put 8 caards  -->
+      <div>
+        <h1>Recursos Relacionados</h1>
+        <p>impulsioone ainda mais o seu negiodl com as ferramnate que o ERP MarketUP oferance para sua emperia</p>
+      </div>
+      <div>
+        <img src="https://marketup.com/wp-content/uploads/2022/06/Home-Mock.png" alt="">
+        <img src="https://marketup.com/wp-content/uploads/2022/06/Home-Mock.png" alt="">
+        <img src="https://marketup.com/wp-content/uploads/2022/06/Home-Mock.png" alt="">
+        <img src="https://marketup.com/wp-content/uploads/2022/06/Home-Mock.png" alt="">
+        <img src="https://marketup.com/wp-content/uploads/2022/06/Home-Mock.png" alt="">
+        <img src="https://marketup.com/wp-content/uploads/2022/06/Home-Mock.png" alt="">
+        <img src="https://marketup.com/wp-content/uploads/2022/06/Home-Mock.png" alt="">
+        <img src="https://marketup.com/wp-content/uploads/2022/06/Home-Mock.png" alt="">
+        
+      </div>
+    </div>
+
+
+
+    <div class="bottom">
+      <!-- Two Divs should be inside here and on the second div you have to put 4 caards  -->
+      <div>
+        <h1>Conheca nossos segmentos</h1>
+        <h3>Contamos com functionalitys exclisuive para atenders diversos segmentas do marcado </h3>
+      </div>
+      <div>
+        <div>
+          <img src="https://masai-course.s3.ap-south-1.amazonaws.com/editor/uploads/2022-09-08/Screenshot%202022-09-06%20at%2012.13.44%20PM_859545.png" alt="">
+          <h2>Lorem ipsum dolor sit amet</h2>
+          <p>SAIBA MAIS</p>
+        </div>
+
+        <div>
+          <img src="https://masai-course.s3.ap-south-1.amazonaws.com/editor/uploads/2022-09-08/Screenshot%202022-09-06%20at%2012.13.44%20PM_859545.png" alt="">
+          <h2>Lorem ipsum dolor sit amet</h2>
+          <p>SAIBA MAIS</p>
+        </div>
+
+        <div>
+          <img src="https://masai-course.s3.ap-south-1.amazonaws.com/editor/uploads/2022-09-08/Screenshot%202022-09-06%20at%2012.13.44%20PM_859545.png" alt="">
+          <h2>Lorem ipsum dolor sit amet</h2>
+          <p>SAIBA MAIS</p>
+        </div>
+
+        <div>
+          <img src="https://masai-course.s3.ap-south-1.amazonaws.com/editor/uploads/2022-09-08/Screenshot%202022-09-06%20at%2012.13.44%20PM_859545.png" alt="">
+          <h2>Lorem ipsum dolor sit amet</h2>
+          <p>SAIBA MAIS</p>
+        </div>
+        
+      
+      </div>
+    </div>
+  </body>
+</html>

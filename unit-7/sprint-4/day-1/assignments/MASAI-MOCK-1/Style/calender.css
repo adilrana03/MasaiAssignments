@@ -1,0 +1,20 @@
+@media only screen and (max-width: 900px) {
+}
+.calender {
+	display: flex;
+	margin: auto;
+}
+.calender > div {
+	width: 95%;
+	margin: 70px;
+	box-shadow: 0 0 10px black;
+	padding: 15px;
+	border-radius: 20px 20px 0 0;
+}
+select {
+	text-align: center;
+	font-size: 20px;
+}
+body {
+	text-align: center;
+}
