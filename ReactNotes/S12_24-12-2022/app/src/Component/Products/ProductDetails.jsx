@@ -6,7 +6,7 @@ function ProductDetails(props) {
   const [state,setState] = useState({})
   useEffect(()=>{
 
-    fetch(`https://fakestoreapi.com/products/${id}`)
+    fetch(` `)
     .then((res)=>res.json())
     .then((data)=>{
         console.log(data)

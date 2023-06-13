@@ -19,7 +19,7 @@ function Electronic(props) {
         {state.length > 0 ? (
           state.map((ele, index) => {
             return (
-              <NavLink to="/productdetails" style={{ color: "blue" }}>
+              <NavLink to="/productdetails"  style={{ color: "blue" }}>
                 {" "}
                 <li style={{ marginTop: "10px" }} key={index + 1}>
                   {" "}
